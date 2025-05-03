@@ -1,119 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bachelor Thesis - Application Overview</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        main {
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        li:before {
-            content: "→";
-            color: #007BFF; /* Săgeată albastră */
-            font-size: 20px;
-            margin-right: 10px;
-        }
-        .container {
-            max-width: 1300px;
-            margin: auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .title-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .image-container {
-            display: flex;
-            flex-direction: column; /* aranjare pe verticală */
-            gap: 20px; /* spațiu între imagini */
-            align-items: center; /* centrează pe orizontală */
-            margin-top: 20px;
-        }
-        img {
-            width: 90%;                  /* Ocupă 90% din container */
-            max-width: 1000px;           /* Marește limita de lățime */
-            height: auto;                /* Menține proporțiile */
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Umbre ușoare */
-            transition: transform 0.3s ease;
-        }
-        img:hover {
-            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4); /* efect de glow */
-            transition: transform 0.3s ease; /* Efect de tranziție lină */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bachelor Thesis - Application Overview</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .title-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    li::before {
+      content: "→";
+      color: #007BFF;
+      font-size: 20px;
+      margin-right: 10px;
+      line-height: 1.4;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 90%;
+      max-width: 1000px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+      box-shadow: 0 8px 20px #d4150e66;
+    }rgba(255, 0, 0, 0.4)rgba(185, 9, 9, 0.4)rgba(185, 9, 9, 0.89)
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      li::before {
+        margin-bottom: 5px;
+      }
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .image-container {
+        padding: 0 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
+  <header>
     <h1>Bachelor Thesis - Project Application</h1>
-</header>
+  </header>
 
-<main>
-    <!-- New section for additional title -->
+  <main>
     <div class="title-container">
-        <h2>Web application for ticketing and merchandise</h2>
+      <h2>Web application for ticketing and merchandise</h2>
     </div>
 
     <div class="container">
-        <h2>The application’s requirements can be described as follows:</h2>
-        <p>The system includes multiple user roles (admin, employee, customer) and utilizes advanced security measures such as JWT.</p>
+      <h2>The application’s requirements can be described as follows:</h2>
+      <p>
+        The system includes multiple user roles (admin, employee, customer) and utilizes advanced security measures such as JWT.
+      </p>
 
-        <ul>
-            <li><strong>Registration and Login:</strong> Three types of users: admin, employee, and customer. Upon registration, the user is assigned the customer role and predefined credit.</li>
-            <li><strong>Security:</strong> Information is encrypted, and access is restricted through JWT tokens stored in local storage.</li>
-            <li><strong>Event Information:</strong> Each event provides details about the venue, description, date, participating artists, and ticket options (VIP or Standard).</li>
-            <li><strong>Product Details:</strong> Clothing items such as T-shirts, hoodies, and socks are available with size options, including XS to XL for shirts and specific sizes for socks.</li>
-            <li><strong>Product Sorting:</strong> Clothes can be sorted by color, artist, and event location, while events can be sorted by location and type.</li>
-            <li><strong>Product Evaluation:</strong> Users can add reviews for products, which include an average rating based on user feedback.</li>
-            <li><strong>Shopping Cart Management:</strong> Management of items in the cart, with feedback for errors such as insufficient credit or unsuccessful cart additions.</li>
-            <li><strong>Address Management:</strong> Users can add multiple addresses, which are linked together for redundancy prevention and efficiency.</li>
-        </ul>
+      <ul>
+        <li><strong>Registration and Login:</strong> Three types of users: admin, employee, and customer. Upon registration, the user is assigned the customer role and predefined credit.</li>
+        <li><strong>Security:</strong> Information is encrypted, and access is restricted through JWT tokens stored in local storage.</li>
+        <li><strong>Event Information:</strong> Each event provides details about the venue, description, date, participating artists, and ticket options (VIP or Standard).</li>
+        <li><strong>Product Details:</strong> Clothing items such as T-shirts, hoodies, and socks are available with size options, including XS to XL for shirts and specific sizes for socks.</li>
+        <li><strong>Product Sorting:</strong> Clothes can be sorted by color, artist, and event location, while events can be sorted by location and type.</li>
+        <li><strong>Product Evaluation:</strong> Users can add reviews for products, which include an average rating based on user feedback.</li>
+        <li><strong>Shopping Cart Management:</strong> Management of items in the cart, with feedback for errors such as insufficient credit or unsuccessful cart additions.</li>
+        <li><strong>Address Management:</strong> Users can add multiple addresses, which are linked together for redundancy prevention and efficiency.</li>
+      </ul>
 
-        <p>This application is designed to handle large volumes of data efficiently and provides robust features for user interaction and product management.</p>
+      <p>This application is designed to handle large volumes of data efficiently and provides robust features for user interaction and product management.</p>
     </div>
 
-    <!-- Section for displaying images -->
     <div class="container">
-        <h2>Project Screenshots</h2>
-        <div class="image-container">
-            <img src="Register+UserInformation.png" alt="Screenshot 1">
-            <img src="EventPage.png" alt="Screenshot 2">
-            <img src="ClothingPage.png" alt="Screenshot 3">
-            <img src="ViewDetails.png" alt="Screenshot 4">
-            <img src="MyCart+UserInformation.png" alt="Screenshot 5">
-            <img src="Order.png" alt="Screenshot 6">
-            <img src="Database.png" alt="Screenshot 7">
-        </div>
+      <h2>Project Screenshots</h2>
+      <div class="image-container">
+        <img src="Register+UserInformation.png" alt="Screenshot 1" />
+        <img src="EventPage.png" alt="Screenshot 2" />
+        <img src="ClothingPage.png" alt="Screenshot 3" />
+        <img src="ViewDetails.png" alt="Screenshot 4" />
+        <img src="MyCart+UserInformation.png" alt="Screenshot 5" />
+        <img src="Order.png" alt="Screenshot 6" />
+        <img src="Database.png" alt="Screenshot 7" />
+      </div>
     </div>
-</main>
-
+  </main>
 </body>
 </html>
